@@ -9,9 +9,7 @@ function submitForm() {
 
 }
 
-
 function createIssue(name, owner, title, body) {
-
   var data = {
     title: title,
     body: body
@@ -26,10 +24,8 @@ function createIssue(name, owner, title, body) {
     }
   }).fail(function(resp) {
     handleError(resp);
-  })
-
+  });
 }
-
 
 function handleResponse(response) {
   $("#issue").html(response.title)
@@ -39,9 +35,10 @@ function handleError(jqHXR, textStatus, errorThrown) {
   console.log("Post error: " + errorThrown);
 }
 
-$(document).ready(function() {
-});
-
 function GithubInteractor(token) {
   this.token = token;
 }
+
+$(document).ready(function() {
+
+});
